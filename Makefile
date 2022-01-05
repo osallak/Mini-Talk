@@ -11,13 +11,18 @@ BCLT = bonus/client_bonus.c
 BSRV = bonus/server_bonus.c
 
 all : client server
-	@echo "client && server created"
-
+	@echo "███╗░░░███╗██╗███╗░░██╗██╗  ████████╗░█████╗░██╗░░░░░██╗░░██╗"
+	@echo "████╗░████║██║████╗░██║██║  ╚══██╔══╝██╔══██╗██║░░░░░██║░██╔╝"
+	@echo "██╔████╔██║██║██╔██╗██║██║  ░░░██║░░░███████║██║░░░░░█████═╝░"
+	@echo "██║╚██╔╝██║██║██║╚████║██║  ░░░██║░░░██╔══██║██║░░░░░██╔═██╗░"
+	@echo "██║░╚═╝░██║██║██║░╚███║██║  ░░░██║░░░██║░░██║███████╗██║░╚██╗"
+	@echo "╚═╝░░░░░╚═╝╚═╝╚═╝░░╚══╝╚═╝  ░░░╚═╝░░░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝"
+	
 client : $(CLT)
-		$(CC) $(CFLAGS) $(CLT) $(UTLS) -o $@
+		@$(CC) $(CFLAGS) $(CLT) $(UTLS) -o $@
 
 server : $(SRV)
-		$(CC) $(CFLAGS)  -o $@ $(SRV) $(UTLS)
+		@$(CC) $(CFLAGS)  -o $@ $(SRV) $(UTLS)
 
 re : clean all bonus
 
@@ -25,8 +30,8 @@ bonus : $(B_clt) $(B_srv)
 		@echo "Bonus created"
 
  $(B_srv) $(B_clt): $(BSRCS)
-		$(CC) $(CFLAGS) -o $(B_clt) $(BCLT) $(UTLS)
-		$(CC) $(CFLAGS) -o $(B_srv) $(BSRV) $(UTLS)
+		@$(CC) $(CFLAGS) -o $(B_clt) $(BCLT) $(UTLS)
+		@$(CC) $(CFLAGS) -o $(B_srv) $(BSRV) $(UTLS)
 clean :
-		$(RM) client server client_bonus server_bonus
+		@$(RM) client server client_bonus server_bonus
 		@echo "cleaned successfully"

@@ -1,0 +1,12 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/osallak/Desktop/Mini-Talk'
+cc -Wall -Wextra -Werror mandatory/client.c srcs/utils.c -o client
+cc -Wall -Wextra -Werror  -o server mandatory/server.c srcs/utils.c
+echo "███╗░░░███╗██╗███╗░░██╗██╗  ████████╗░█████╗░██╗░░░░░██╗░░██╗"
+echo "████╗░████║██║████╗░██║██║  ╚══██╔══╝██╔══██╗██║░░░░░██║░██╔╝"
+echo "██╔████╔██║██║██╔██╗██║██║  ░░░██║░░░███████║██║░░░░░█████═╝░"
+echo "██║╚██╔╝██║██║██║╚████║██║  ░░░██║░░░██╔══██║██║░░░░░██╔═██╗░"
+echo "██║░╚═╝░██║██║██║░╚███║██║  ░░░██║░░░██║░░██║███████╗██║░╚██╗"
+echo "╚═╝░░░░░╚═╝╚═╝╚═╝░░╚══╝╚═╝  ░░░╚═╝░░░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝"
+make: Leaving directory `/Users/osallak/Desktop/Mini-Talk'
+ 

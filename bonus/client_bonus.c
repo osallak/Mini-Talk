@@ -6,7 +6,7 @@
 /*   By: osallak <osallak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 13:17:21 by osallak           #+#    #+#             */
-/*   Updated: 2022/01/02 16:56:53 by osallak          ###   ########.fr       */
+/*   Updated: 2022/02/28 13:49:17 by osallak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ void	shift_send_sig(int c, int pid)
 int	main(int ac, char **av)
 {
 	int	pid;
+	int	i;
 
+	i = -1;
 	signal(SIGUSR1, handler);
 	if (ac != 3)
 	{
@@ -47,7 +49,15 @@ int	main(int ac, char **av)
 		ft_putstr("      2) ./client_bonus <pid> <string to send> \n");
 		exit(0);
 	}
+	while (av[1][++i])
+		if (av[1][i] < '0' || av[1][i] > '9')
+			return (0);
 	pid = ft_atoi(av[1]);
+	if (!pid || pid == -1)
+	{
+		ft_putstr("Invalid pid\n");
+		return (0);
+	}
 	while (*av[2])
 		shift_send_sig(*av[2]++, pid);
 	shift_send_sig('\0', pid);
